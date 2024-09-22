@@ -18,4 +18,4 @@ jobs:
 
     - name: Run Flexera Script
       run: |
-        pwsh ./path/to/your/script.ps1
+        pwsh ./lsaxena14/testing/test.ps1

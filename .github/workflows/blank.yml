@@ -1,0 +1,21 @@
+name: Run Flexera Script Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # This will run the script daily at midnight UTC
+
+jobs:
+  run-script:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set PowerShell Execution Policy
+      run: |
+        Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted
+
+    - name: Run Flexera Script
+      run: |
+        pwsh ./path/to/your/script.ps1
